@@ -9,4 +9,4 @@ function sumOfSomething(a,b,callbackfn){
     const val2 = callbackfn(b);
     return val1 + val2;
 }
-console.log(sumOfSomething(2,2,square))
+console.log(sumOfSomething(2,2,square));

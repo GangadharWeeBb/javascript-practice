@@ -40,4 +40,4 @@ let menu = {
     width : 200,height:300,title:"mymenu"
 };
 multiplyNumeric(menu)
-console.log(menu)
+console.log(menu) 

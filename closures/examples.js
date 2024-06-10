@@ -14,7 +14,7 @@ function y () {
         setTimeout(function() {
             console.log(index)
         }, i*1000)
-    })(i);
+    })(i); //iife
 }
 }
 // data hiding and encapsulation
