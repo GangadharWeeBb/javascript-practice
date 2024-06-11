@@ -1,0 +1,30 @@
+<!-- set background color of every <p> element where parent is <div> element -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Document Object</h1>   
+    <h2>The querySelectorAll() Methods</h2>
+    <p>Change the background color of every p element where the parent is div element</p>
+    <div>
+        <h3>H3 elements</h3>
+        <p>I am a p element, my parent is div element</p>
+    </div>
+    <div>
+        <h2>H2 elements</h2>
+        <p>I am p element, my parent is also div element</p>
+    </div>
+
+    <script>
+        const nodeList = document.querySelectorAll('div > p');
+        for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.backgroundColor = "green"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- selectores are applied to entire document not just to particular element on which querySelectorAll()
+ returns a list containing one Element object for each descendent node that matches atleast one of specified selector
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Onepiece is Greatest Of All Time</h1>
+    <p>Finding html elements by query Selector</p>
+    <div>Dive one</div>
+    <p class="intro">Luffy</p>
+    <div>Div two</div>
+    <p class="subheading">Zoro</p>
+    <div>another div</div>
+    <div id="myDIV" style="border: 1px solid black; padding: 10px;">
+        <div class="example">Hawkeye</div>
+        <div class="example">Shanks</div>
+        <div class="example">kaido</div>
+    </div>
+    <div id="demo"></div>
+
+    <script>
+        var paragraphs = document.querySelectorAll('p'); //we also select for particular p. eg: p.intro - selects para with class name intro
+        paragraphs.forEach(p=>p.style.backgroundColor='red')
+
+        //we can pass multiple selectors as well const matches 
+        const element = document.getElementById("myDIV")
+        const list = element.querySelectorAll('.example');
+        document.getElementById("demo").innerHTML = list.length;
+
+    </script>
+</body>
+</html>

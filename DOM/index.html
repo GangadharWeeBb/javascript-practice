@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate2Numbers</title>
+    <script>
+        function sum() {
+            const a = document.getElementById('firstNumber').value;
+            const b = document.getElementById('SecondNumber').value;
+            const element = document.getElementById('finalAnswer')
+            element.innerHTML = parseInt(a) + parseInt(b);
+        }
+                // by using backend 
+                async function sum() {
+                const a = document.getElementById('firstNumber').value;
+                const b = document.getElementById('SecondNumber').value;
+
+                const response = await fetch("pastethe url" + a+""+b)
+                const ans = await response.text();
+                document.getElementById('finalAnswer').innerHTML = ans;
+            }
+    </script>
+</head>
+<body>
+    <input id="firstNumber"  type="text" placeholder="no.1"> <br></br>
+    <input id = "secondNumber"  type="text" placeholder="no.2"> <br></br>
+    <button onclick="sum()">CalculateSum</button></body>
+    <div id="finalAnswer"></div>
+</body>
+</html>

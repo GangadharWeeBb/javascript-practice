@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayText() {
+            const firstName = document.getElementById("fname").value;
+            const lastName = document.getElementById("lname").value;
+            const numElements = document.getElementById('LoginForm').elements.length;
+            document.getElementById('display').innerHTML = "Found " + numElements + " in the form. "+" firstName is " + firstName;
+
+            const para = document.createElement('p')
+            para.innerText = "this element is created by DOM "
+            document.body.appendChild(para);
+        }
+    
+    </script>
+</head>
+<body>
+    <form id="LoginForm" action="">
+        FirstName: <input id="fname" type="text" >
+        LastName: <input id="lname" type="text">
+    </form>
+    <p>Click the try button to display the no.of elements in the form</p>
+    <button onclick="displayText()">Try it</button>
+    <p id="display"></p>
+</body>
+</html>

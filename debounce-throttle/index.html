@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Debouncing</h1>
+    <button id="clickbutton">click me</button>
+    <p >counter: <span id="counter">0</span></p>
+    
+    <script>
+        function debounce(func, delay){
+            let timeoutId;
+            return function() {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(this, arguments)
+                },delay)
+            }
+        }
+        //fun to increment the counter
+        function incrementCounter() {
+            const counterElement = document.getElementById('counter')
+            let count = parseInt(counterElement.innerText);
+            counterElement.innerText = ++count;
+        }
+        //debounce the incecount func with delay of 1000milliseconds
+        const debouncedIncrement = debounce(incrementCounter, 1000);
+        //eventlistener for btn clikc
+        document.getElementById('clickbutton').addEventListener('click',debouncedIncrement)
+    </script>
+
+</body>
+</html>

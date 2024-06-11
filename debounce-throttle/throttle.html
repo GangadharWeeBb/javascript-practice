@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="clickButton">click me</button>
+    <p>count: <span id="clickCount">0</span></p>
+
+    <script>
+        function throttle(func, delay) {
+            let throttling = false;
+            return function() {
+                if(!throttling) {
+                    throttling = true;
+                    func.apply(this, arguments);
+                    setTimeout(() => {
+                        throttling = false;
+                    },delay)
+                }
+            }
+        }
+        function handleClick() {
+            const clickCountElement = document.getElementById('clickCount');
+            let count = parseInt(clickCountElement.innerText);
+            clickCountElement.innerText=++count;
+        }
+        //throttle the handleCLick func with a delay of 1sec
+        const throttledClick = throttle(handleClick, 1000);
+        document.getElementById('clickButton').addEventListener('click', throttledClick)
+    </script>
+</body>
+</html>
